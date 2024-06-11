@@ -1,8 +1,7 @@
 package routers
 
 import (
-	"net/http"
-
+	controller "github.com/HoangCaoPhi/go-ecommerce/internals/controllers"
 	"github.com/gin-gonic/gin"
 )
 
@@ -11,11 +10,7 @@ func NewRouter() *gin.Engine {
 
 	v1 := r.Group("/v1")
 	{
-		v1.GET("/test", func(ctx *gin.Context) {
-			ctx.JSON(http.StatusOK, gin.H{
-				"message": "pong",
-			})
-		})
+		v1.GET("/user", controller.NewUserController().GetUserById)
 	}
 
 	return r
