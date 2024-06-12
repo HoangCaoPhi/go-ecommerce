@@ -1,9 +1,8 @@
 package controller
 
 import (
-	"net/http"
-
 	"github.com/HoangCaoPhi/go-ecommerce/internals/services"
+	"github.com/HoangCaoPhi/go-ecommerce/pkg/responses"
 	"github.com/gin-gonic/gin"
 )
 
@@ -18,7 +17,5 @@ func NewUserController() *UserController {
 }
 
 func (uc *UserController) GetUserById(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{
-		"message": uc.userService.GetInfoUserService(),
-	})
+	responses.SuccessResponse(c, 20001, []string{"hcphi test"})
 }
