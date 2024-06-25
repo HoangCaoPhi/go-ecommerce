@@ -1,4 +1,4 @@
-package routers
+package initialize
 
 import (
 	controller "github.com/HoangCaoPhi/go-ecommerce/internals/controllers"
@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func NewRouter() *gin.Engine {
+func InitRouter() *gin.Engine {
 	r := gin.Default()
 
 	r.Use(middlewares.AuthenticateMiddleware())
